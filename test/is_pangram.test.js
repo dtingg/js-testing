@@ -31,11 +31,14 @@ describe('isPangram()', () => {
 
   test("missing character 'x'", () => {
     // Arrange
+    const text = "abcdefghijklmnopqrstuvwyz"
 
     // Act
+    const answer = isPangram(text);
 
     // Assert
-
+    expect(answer).toBeFalsy();
+    expect(answer).toEqual(false);
   });
 
   test('empty sentence', () => {
