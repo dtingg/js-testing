@@ -78,4 +78,27 @@ describe('isPangram()', () => {
   });
 
   // Write your own test case
+  test('pangram with capital letters', () => {
+    // Arrange
+    const text = "The quick brown fox jumps over the lazy dog"
+
+    // Act
+    const answer = isPangram(text);
+
+    // Assert
+    expect(answer).toBeTruthy();
+    expect(answer).toEqual(true);
+  });
+
+  test('pangram with punctuation', () => {
+    // Arrange
+    const text = "the quick brown fox jumps over the lazy dog!!"
+
+    // Act
+    const answer = isPangram(text);
+
+    // Assert
+    expect(answer).toBeTruthy();
+    expect(answer).toEqual(true);
+  });
 });
