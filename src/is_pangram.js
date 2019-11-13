@@ -1,22 +1,16 @@
 const isPangram = function isPangram(text) {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz"
-  const letterDict = {};
+  const alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
+  const alphabetObject = {};
 
-  for (const char in alphabet) {
-    letterDict[char] = false;
-  }
+  alphabet.forEach((letter) => {
+    alphabetObject[letter] = false;
+  });
 
-  for (const char in text) {
-    letterDict[char] = true;
-  }
+  text.toLowerCase().split("").forEach((letter) => {
+    alphabetObject[letter] = true;
+  });
 
-  for (const letter in letterDict) {
-    if (letterDict[letter] === false) {
-      return false
-    }
-  }
-
-  return true;
+  return Object.values(alphabetObject).every((value) => value === true);
 };
 
 module.exports = isPangram;
